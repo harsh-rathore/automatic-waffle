@@ -1,0 +1,15 @@
+#include <stdio.h>
+int add(int a, int b) {
+	return a+b;
+}
+int subtract(unt a, int b) {
+	return a-b;
+}
+int main(void) {
+	int a, b;
+	scanf("%d",&a);
+	scanf("%d",&b);
+	printf("input:\n%d + %d\n",a,b);
+	printf("output:\naddition = %d\nsubtraction = %d",add(a,b),subtract(a,b));
+	return 0;
+}
