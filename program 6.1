@@ -114,7 +114,7 @@ int main(void) {
 
 
 
-//program 6.8 = to return the sum of first n by UDF min()-pass and return
+//program 6.8 = to return the sum of first n by UDF sumn()-pass and return
 #include <stdio.h>
 int sumn(int n) {
 	int sum=0;
@@ -132,4 +132,67 @@ int main(void) {
 
 
 
+
+//program 6.9 = to find string length by UDF str_len()-pass and return
+#include <stdio.h>
+int str_len(char * p) {
+	int length;
+	for (length = 0; p[length] != '\0'; length++);
+	return length;
+}
+int main(void) {
+	char s[10]; // s to stroe a word
+	scanf("%s",s);
+	printf("length of %s :\n%d",s,str_len(s));
+	return 0;
+}
+
+
+
+//program 6.10 = to sort 1D char_array in ascending order by UDF sort()-pass and return
+#include <stdio.h>
+int sort(char * p) {
+	int n;
+	for(n=0; p[n] != '\0'; n++);
+	for(int i=0; i<n-1; i++) {
+		for(int j=i+1; j < n; j++) {
+			if (p[i] > p[j]) {
+				char temp = p[i];
+				p[i] = p[j];
+				p[j] = temp;
+			}
+		}
+	}
+}
+int main(void) {
+	char s[10]; // s to stroe a word
+	scanf("%s",s);
+	printf("ascending sort of %s :\n",s);
+	sort(s);
+	printf("%s",s);
+	return 0;
+}
+
+
+
+//program 6.11 = to find wether a string is palindrome or not by UDF check()-pass and return
+#include <stdio.h>
+int check(char * p) {
+	int n;
+	for(n=0; p[n] != '\0'; n++); // to find length of s
+	for(int i=0; i<n/2; i++) {
+		if (p[i] == p[n-1-i])
+			printf("it is a palindrome string");
+		else
+			printf("it is not a palindrome string");
+	}
+}
+int main(void) {
+	char s[10]; // s to stroe a word
+	scanf("%s",s);
+	printf("input:\n%s\n",s);
+	check(s);
+	//printf("output:\n",s);
+	return 0;
+}
 
