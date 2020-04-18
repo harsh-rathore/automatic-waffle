@@ -1,3 +1,4 @@
+//program 6.1 - addition and subtraction of two variable
 #include <stdio.h>
 int add(int a, int b) {
 	return a+b;
@@ -13,3 +14,122 @@ int main(void) {
 	printf("output:\naddition = %d\nsubtraction = %d",add(a,b),subtract(a,b));
 	return 0;
 }
+
+
+
+
+//program 6.2 - addition of 3 interger using add()-no pass no return
+
+//program 6.3 - check whether input is negative, positive or zero using UDF check()- pass no return
+#include <stdio.h>
+int check(int a) {
+	if( a == 0)
+		printf("it is zero.\n");
+	else if (a>0)
+		printf("it is positive\n");
+	else
+		printf("it is negative\n");
+}
+int main(void) {
+	int a;
+	scanf("%d",&a);
+	check(a);
+	return 0;
+}
+
+
+
+////program 6.3 - print factors of an integer using UDF factor()- pass no return
+#include <stdio.h>
+int factor(int a) {
+	for(int i=1; i<=a; i++)
+		if (a%i==0)
+			printf("%d ",i);
+	printf("\n");
+}
+int main(void) {
+	int a;
+	scanf("%d",&a);
+	printf("Factor of %d:\n",a);
+	factor(a);
+	return 0;
+}
+
+
+
+//program 6.5 = find the factorial of a given number by fact()-pass and return
+#include <stdio.h>
+int fact(int a) {
+	int f = 1; // f to store factorial
+	a++;
+	while(a--) {
+		if (a > 0)
+			f = f * a;
+	}
+	return f;
+}
+int main(void) {
+	int a;
+	scanf("%d",&a);
+	printf("factorial of %d",fact(a));
+	return 0;
+}
+
+
+
+//program 6.6 = to calculate 1+2^2+3^2..+n^2 using square()-pass and return
+#include <stdio.h>
+int square(int a) {
+	int square=0; // square to store factorial
+	a++;
+	while(a--) {
+		if (a > 0)
+			square += (a*a);
+			printf("%d\n",a);
+	}
+	return square;
+}
+int main(void) {
+	int a;
+	scanf("%d",&a);
+	printf("square addition to %d:\n%d",a,square(a));
+	return 0;
+}
+
+
+
+
+//program 6.7 = to to find min from 2 no.s by UDF min()-pass and return
+#include <stdio.h>
+int min(int a, int min) {
+	if (min > a)	min=a;
+	return min;
+}
+int main(void) {
+	int a,b;
+	scanf("%d%d",&a,&b);
+	printf("minimum number:\n%d",min(a,b));
+	return 0;
+}
+
+
+
+//program 6.8 = to return the sum of first n by UDF min()-pass and return
+#include <stdio.h>
+int sumn(int n) {
+	int sum=0;
+	n++;
+	while(n--)
+		sum+=n;
+	return sum;
+}
+int main(void) {
+	int n;
+	scanf("%d",&n);
+	printf("sum of first %d number:\n%d",n,sumn(n));
+	return 0;
+}
+
+
+
+
